@@ -9,7 +9,7 @@ const DepartmentForm = (props) => {
   const [editId, setEditId] = useState(props.match.params.id);
   const onSubmit = () => {
     const formData = { dptName, description };
-    if (editId < 1)
+    if (editId === undefined || editId < 1)
       backApi.post("/department/", formData).then(() => {
         history.push("/departments");
       });

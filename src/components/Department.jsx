@@ -21,6 +21,9 @@ const Department = () => {
       .then(() => console.log("delete successfull"));
   };
 
+  const onAddClick = () => {
+    history.push("/department-form");
+  };
   return (
     <div>
       <AlertDialog
@@ -71,6 +74,15 @@ const Department = () => {
           ))}
         </tbody>
       </table>
+      <button
+        className="ui primary button"
+        onClick={() => {
+          onAddClick();
+        }}
+      >
+        {" "}
+        Add Department
+      </button>
     </div>
   );
 };
