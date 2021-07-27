@@ -25,11 +25,13 @@ const Employee = () => {
       .delete("/employee/" + delId)
       .then(() => console.log("delete successfull"));
   };
+  const onDepartmentClick = () => {
+    history.push("/departments");
+  };
   let rank = 0;
   let preSal = 0;
   return (
     <div>
-      {console.log(isShow)}
       {
         <AlertDialog
           title="Confirm Delete"
@@ -99,6 +101,12 @@ const Employee = () => {
             <tr>
               <th></th>
               <th colspan="4">
+                <button
+                  className="ui primary button"
+                  onClick={onDepartmentClick}
+                >
+                  Department List{" "}
+                </button>
                 <div
                   className="ui right floated small primary labeled icon button"
                   onClick={onAddEmployee}

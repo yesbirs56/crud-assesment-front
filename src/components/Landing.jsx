@@ -11,11 +11,11 @@ const Landing = () => {
   };
   return (
     <div className="ui form">
-      <button className="ui primary" onClick={onDepartmentClick}>
-        Department{" "}
+      <button className="ui primary button" onClick={onDepartmentClick}>
+        Department List{" "}
       </button>
-      <button className="ui primary" onClick={onEmployeeClick}>
-        Employee{" "}
+      <button className="ui primary button" onClick={onEmployeeClick}>
+        Employee List{" "}
       </button>
     </div>
   );

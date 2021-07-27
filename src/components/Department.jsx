@@ -24,6 +24,10 @@ const Department = () => {
   const onAddClick = () => {
     history.push("/department-form");
   };
+  const onEmployeeClick = () => {
+    history.push("/employees");
+  };
+
   return (
     <div>
       <AlertDialog
@@ -82,6 +86,9 @@ const Department = () => {
       >
         {" "}
         Add Department
+      </button>
+      <button className="ui primary button" onClick={onEmployeeClick}>
+        Employee List{" "}
       </button>
     </div>
   );
