@@ -25,6 +25,8 @@ const Employee = () => {
       .delete("/employee/" + delId)
       .then(() => console.log("delete successfull"));
   };
+  let rank = 0;
+  let preSal = 0;
   return (
     <div>
       {console.log(isShow)}
@@ -48,6 +50,7 @@ const Employee = () => {
               <th>Address</th>
               <th>Department Name</th>
               <th>Salary Amount</th>
+              <th>Rank</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -62,6 +65,8 @@ const Employee = () => {
                 <td>{employee.address}</td>
                 <td>{employee.dptName}</td>
                 <td>{employee.salary}</td>
+                <td>{preSal !== employee.salary ? ++rank : rank}</td>
+                {(preSal = employee.salary)}
                 <td>
                   <button
                     className="ui button"
