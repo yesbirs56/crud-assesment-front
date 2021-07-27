@@ -56,38 +56,44 @@ const Employee = () => {
             </tr>
           </thead>
           <tbody>
-            {employees.map((employee) => (
-              <tr>
-                <td>{employee.name}</td>
-                <td>{employee.doj}</td>
-                <td>{employee.email}</td>
-                <td>{employee.mobile}</td>
-                <td>{employee.address}</td>
-                <td>{employee.dptName}</td>
-                <td>{employee.salary}</td>
-                <td>{preSal !== employee.salary ? ++rank : rank}</td>
-                {(preSal = employee.salary)}
-                <td>
-                  <button
-                    className="ui button"
-                    onClick={() => onEdit(employee.employeeId)}
-                  >
-                    Edit
-                  </button>
-                </td>
-                <td>
-                  <button
-                    className="ui red button"
-                    onClick={() => {
-                      setIsShow(true);
-                      setDelId(employee.employeeId);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {employees.map((employee) => {
+              if (preSal !== employee.salary) {
+                rank++;
+                preSal = employee.salary;
+              }
+              return (
+                <tr>
+                  <td>{employee.name}</td>
+                  <td>{employee.doj}</td>
+                  <td>{employee.email}</td>
+                  <td>{employee.mobile}</td>
+                  <td>{employee.address}</td>
+                  <td>{employee.dptName}</td>
+                  <td>{employee.salary}</td>
+                  <td>{rank}</td>
+
+                  <td>
+                    <button
+                      className="ui button"
+                      onClick={() => onEdit(employee.employeeId)}
+                    >
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className="ui red button"
+                      onClick={() => {
+                        setIsShow(true);
+                        setDelId(employee.employeeId);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
           <tfoot>
             <tr>
