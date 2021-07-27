@@ -4,7 +4,7 @@ import backApi from "../api/backApi";
 const EmployeeForm = (props) => {
   const history = useHistory();
   const [name, setName] = useState("");
-  const [doj, setDoj] = useState(Date.now());
+  const [doj, setDoj] = useState(new Date().toUTCString());
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [address, setAddress] = useState("");
