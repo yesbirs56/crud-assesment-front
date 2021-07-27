@@ -64,7 +64,7 @@ const Employee = () => {
               return (
                 <tr>
                   <td>{employee.name}</td>
-                  <td>{employee.doj}</td>
+                  <td>{new Date(employee.doj).toDateString()}</td>
                   <td>{employee.email}</td>
                   <td>{employee.mobile}</td>
                   <td>{employee.address}</td>
